@@ -17,7 +17,7 @@ function Search({ onSearch }) {
     const url = `https://www.giantbomb.com/api/game/?api_key=${API_KEY}&search=${searchTerm}`;
 
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, { crossdomain: true });
       const results = response.data.results;
       onSearch(results);
     } catch (error) {
