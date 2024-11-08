@@ -19,7 +19,7 @@ function Search({ onSearch }) {
         try {
             const response = await axios.get(url, {
                 headers: {
-                    'Access-Control-Allow-Origin': '/', // Replace with your allowed origin
+                    'Access-Control-Allow-Origin': 'https://imc89.github.io/GamesDB/', // Replace with your allowed origin
                 }
             });
             const results = response.data.results;
