@@ -15,7 +15,7 @@ function Search({ onSearch }) {
     event.preventDefault();
     if (!searchTerm) return;
 
-    const url = `${apiUrl}?api_key=${API_KEY}&format=json&field_list=name,image&filter=name:${searchTerm}``;
+    const url = `${apiUrl}?api_key=${API_KEY}&format=json&field_list=name,image&filter=name:${searchTerm}`;
 
     try {
       const response = await axios.get(url);
