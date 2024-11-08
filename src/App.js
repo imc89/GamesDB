@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Game Search</h1>
+      <h1>Game Search Library</h1>
       <Search onSearch={handleSearch} />
       {searchResults.length > 0 && (
         <ul>
