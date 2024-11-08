@@ -20,6 +20,7 @@ function Search({ onSearch }) {
     try {
       const response = await axios.get(cors + url, {
         headers: {
+            'origin':'x-requested-with',
             "user-key": "40759257c55df398b0d23ca3f4da5579",
             Accept: "application/json"
         }});
