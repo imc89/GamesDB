@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const API_KEY = '912e645d47af5f8f8be768b203e58549e7b7d0cc'; // Replace with your actual API key
+const apiUrl = 'https://www.giantbomb.com/api/games/';
 
 function Search({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,7 +15,7 @@ function Search({ onSearch }) {
     event.preventDefault();
     if (!searchTerm) return;
 
-    const url = `https://www.giantbomb.com/api/game/?api_key=${API_KEY}&search=${searchTerm}`;
+    const url = `${apiUrl}?api_key=${API_KEY}&format=json&field_list=name,image&filter=name:${searchTerm}``;
 
     try {
       const response = await axios.get(url);
