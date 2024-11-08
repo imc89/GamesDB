@@ -18,7 +18,9 @@ function Search({ onSearch }) {
     const url = `${apiUrl}?api_key=${API_KEY}&format=json&field_list=name,image&filter=name:${searchTerm}`;
 
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url, {headers: { 
+        'Access-Control-Allow-Origin' : '*',
+      }});
       const results = response.data.results;
       onSearch(results);
     } catch (error) {
