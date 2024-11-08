@@ -15,15 +15,9 @@ function Search({ onSearch }) {
     if (!searchTerm) return;
 
     const url = `https://www.giantbomb.com/api/game/?api_key=${API_KEY}&search=${searchTerm}`;
-    const cors = `https://cors-anywhere.herokuapp.com/`;
 
     try {
-      const response = await axios.get(cors + url, {
-        headers: {
-            'origin':'https://imc89.github.io/GamesDB/',
-            "user-key": "40759257c55df398b0d23ca3f4da5579",
-            Accept: "application/json"
-        }});
+      const response = await axios.get(url);
       const results = response.data.results;
       onSearch(results);
     } catch (error) {
