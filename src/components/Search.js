@@ -20,6 +20,7 @@ function Search({ onSearch }) {
     try {
       const response = await axios.get(url, {headers: { 
         'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Credentials':true
       }});
       const results = response.data.results;
       onSearch(results);
