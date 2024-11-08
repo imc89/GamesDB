@@ -17,7 +17,6 @@ function Search({ onSearch }) {
     const url = `https://www.giantbomb.com/api/game/?api_key=${API_KEY}&search=${searchTerm}`;
 
     try {
-    axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
       const response = await axios.get(url);
       const results = response.data.results;
       onSearch(results);
