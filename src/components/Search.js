@@ -15,9 +15,10 @@ function Search({ onSearch }) {
     if (!searchTerm) return;
 
     const url = `https://www.giantbomb.com/api/game/?api_key=${API_KEY}&search=${searchTerm}`;
+    const cors = 'https://corsproxy.io/'
 
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(cors + url);
       const results = response.data.results;
       onSearch(results);
     } catch (error) {
